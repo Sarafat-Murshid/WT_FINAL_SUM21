@@ -1,6 +1,6 @@
 <?php include 'Controllers/CategoryController.php';?>
 	<div class="center">
-		<h5 class="text-danger"><?php echo $db_err;?></h5>
+		<h5 class="text-danger"><?php echo $err_db;?></h5>
 		<form method="post" action="" class="form-horizontal form-material">
 			<div class="form-group">
 				<h4 class="text">Name:</h4> 

@@ -9,7 +9,7 @@
 		$db_err = $rs;
 	}
 	else if (isset($_POST["edit_category"])){
-		$rs = updateCategory($_POST["name"],$_POST["id"],$_POST["dob"],$_POST["credit"],$_POST["cgpa"],$_POST["dept_id"]);
+		$rs = updateCategory($_POST["id"],$_POST["name"],$_POST["dob"],$_POST["credit"],$_POST["cgpa"],$_POST["dept_id"]);
 		if($rs === true){
 			header("Location: Allstudents.php");
 		}
@@ -26,11 +26,11 @@
 		return $rs;
 	}
 	function getCategory($id){
-		$query = "select name,dob,credit,cgpa,dept_id from student where id=$id";
+		$query = "select * from student where id=$id";
 		$rs = get($query);
 		return $rs[0];
 	}
-	function updateCategory($name,$id,$dob,$credit,$cgpa,$dept_id){
+	function updateCategory($name,$dob,$credit,$cgpa,$dept_id,$id){
 		$query = "update student set name='$name',dob='$dob',credit='$credit',cgpa='$cgpa',dept_id='$dept_id' where id = $id";
 		return execute($query);
 	}
@@ -38,5 +38,6 @@
 	{
 		$query= "delete from student where id=$id";
 		return execute($query);
+		
 	}
 ?>

@@ -13,7 +13,7 @@
 				<tr>
 					<td>
 					<input type="hidden" value="<?php echo $id?>" name="id">
-						<input type="text" name="sname" value="<?php echo $c["Name"];?>" placeholder="Student Name"><span><?php echo $err_sname;?>
+						<input type="text" name="name" value="<?php echo $c["name"];?>" placeholder="Student Name">
 					</td>
 				</tr>
 				<tr>
